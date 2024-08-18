@@ -1,0 +1,209 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 97vh;
+            border-radius:10px;
+            font-family: Arial, sans-serif;
+            background-color: #f3f3f3;
+        }
+        .container {
+            display: flex;
+            width: 100%;
+            height: 100vh;
+            justify-content: center;
+            justify-items: center;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .form-body {
+            flex: 1;
+            align-item:center;
+            padding: 25px;
+            background-color: #fff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .form-body h1 {
+            margin-left: 13%;
+            margin-bottom:0px;
+            font-size: 30px;
+        }
+
+        .form-body p {
+            margin-left: 13%;
+            margin-bottom: 9%;
+            color: #555;
+        }
+
+        .form-body h5{
+            margin-left: 39%;
+            margin-top: 2%;
+            color: #555;
+        }
+
+        .form-body label {
+            margin-left: 13%;
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        .form-body input[type="email"],
+        .form-body input[type="password"] {
+            width: calc(80% - 20px);
+            padding: 10px;
+            margin-left: 12%;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 15px;
+            font-size: 16px;
+        }
+         
+        .form-body .marker {
+            display: flex;
+            justify-content: space-evenly;
+            margin-left= 10%;
+            margin-bottom: 10px;
+        }
+
+        .form-body  .marker input[type="checkbox"] {
+            margin-right: 4px;
+        }
+    
+        .form-body button {
+            width: 80%;
+            margin-left: 13%;
+            padding: 10px;
+            background-color: #4CAF50;
+            border: none;
+            border-radius: 15px;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .form-body button:hover {
+            background-color: #45a049;
+        }
+
+        .form-body .separator {
+            display: flex;
+            align-items: center;
+            text-align: center;
+            margin-left: 13%;
+            margin-right: 13%;
+            margin-bottom: 2%;
+            margin-top: 5%;
+        }
+        
+        .form-body .separator::before,
+        .form-body .separator::after {
+            content: '';
+            flex: 1;
+            border-bottom: 1px solid #ccc;
+        }
+        
+        .form-body .separator:not(:empty)::before {
+            margin-right: .25em;
+        }
+        
+        .form-body .separator:not(:empty)::after {
+            margin-left: .25em;
+        }
+        
+        .form-body .alt-login {
+            display: flex;
+            align-item:center;
+            justify-content: space-evenly;
+            margin-left: 5%;
+            margin-right: 10%;
+            margin-top: 20px;
+        }
+        .form-body .alt-login button {
+            width: 38%;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            padding: 10px;
+            border: 2px solid #ccc;
+            border-radius: 20px;
+            background-color: #fff;
+            cursor: pointer;
+        }
+
+        .form-body .alt-login .google-btn {
+            background-color: white;
+            color:black;
+        }
+        
+        .form-body .alt-login .apple-btn {
+            background-color: white;
+            color:black;
+        }
+
+        .form-body .alt-login button img {
+            width: 20px; 
+            height: auto;
+            margin-right: 10px;
+        }
+        .crop {
+            flex: 1;
+            background-image: url("{% static 'images/loginflwr.jpg' %}");
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="form-body">
+            <h1>Welcome back!</h1>
+            <p>Enter your credentials to access your account!</p>
+            {% if messages %}
+               <ul>
+                  {% for message in messages %}
+                     <li>{{ message }}</li>
+                  {% endfor %}
+              </ul>
+            {% endif %}
+            <form method="post">
+                {% csrf_token %}
+                <label for="email">Email address :</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                <label for="password">Password :</label>
+                <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                <div class="marker">
+                    <a> <input type="checkbox"> Remember for 30 days</a>
+                    <a href="{% url 'register' %}">Forgot password?</a>
+                </div>
+                <button type="submit">Login</button>
+            </form>
+            <div class="separator">
+                <span>or</span>
+            </div>
+            <div class="alt-login">
+                <button class="btn google-btn">
+                    <img src="{% static 'images/g-logo.png' %}" alt="Google">
+                    Sign in with Google
+                </button>
+                
+                <button class="btn apple-btn">
+                    <img src="{% static 'images/Apple_l.svg' %}" alt="Apple">
+                    Sign in with Apple
+                </button>
+            </div>
+            <h5>Don't have an account? <a href="{% url 'register' %}">Sign Up</a></h5>
+        </div>
+        <section class="crop"></section>
+    </div>
+</body>
+</html>

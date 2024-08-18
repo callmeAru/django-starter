@@ -1,0 +1,250 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Flipkart</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .start {
+            background-color: #2874f0;
+            padding: 10px 20px;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .start .logo img {
+            height: 40px;
+            background: transparent;
+        }
+
+        .start .search-bar {
+            display: flex;
+            align-items: center;
+            width: 60%;
+        }
+
+        .start .search-bar input {
+            width: 100%;
+            padding: 6px 10px;
+            border-radius: 2px;
+            border: none;
+        }
+
+        .start .user-view a,
+        .start .user-view button {
+            background-color: #2874f0;
+            border: none;
+            color: white;
+            cursor: pointer;
+            padding: 6px 10px;
+            margin-left: 10px;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .start .user-view .btn-primary {
+            background-color: #fff;
+            color: #2874f0;
+        }
+
+        .nav-bar {
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+        }
+
+        .nav-bar select {
+            border: none;
+            background-color: transparent;
+            cursor: pointer;
+        }
+
+        .detail {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .detail h2 {
+            margin-bottom: 20px;
+        }
+
+        .products {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .products .card {
+            flex: 0 0 23%;
+            max-width: 23%;
+            text-align: center;
+        }
+
+        .products .card img {
+            width: 100%;
+            height: auto;
+        }
+
+        .products .card-title {
+            margin-top: 10px;
+        }
+
+        .products .card-text {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="start">
+            <div class="logo">
+                <img src="{% static 'images/flipkartlogo.webp' %}" alt="Flipkart Logo">
+                <a>flipkart</a>
+            </div>
+            <div class="search-bar">
+                <input type="text" placeholder="Search for products, brands and more">
+                <button class="btn btn-primary">Search</button>
+            </div>
+            <div class="user-view">
+                <a href="#" target='_blank' class="btn">Become a Seller</a>
+                <button class="btn">More</button>
+                <button class="btn">Cart</button>
+                <a href="{% url 'loginpg' %}" class="btn btn-primary">Logout</a>
+            </div>
+        </div>
+        <nav class="nav-bar">
+            <select>
+                <option>    Electronics</option>
+                <option>Mobiles</option>
+                <option>Mobile Accessories</option>
+                <option>Cases & Covers</option>
+            </select>
+           <select>
+                <option>TVs & Appliances</option>
+                <option>TVs</option>
+                <option>Washing Machines</option>
+                <option>Refrigerators</option>
+            </select>
+            <select>
+                <option>Men</option>
+                <option>Footwear</option>
+                <option>Clothing</option>
+                <option>Accessories</option>
+            </select>
+            <select>
+                <object>Women</object>
+                <option>Clothing</option>
+                <option>Footwear</option>
+                <option>Accessories</option>
+            </select>
+            <select>
+                <option>Baby & Kids</option>
+                <option>Toys</option>
+                <option>Clothing</option>
+                <option>Footwear</option>
+            </select>
+            <select>
+                <option>Home & Furniture</option>
+                <option>Furniture</option>
+                <option>Home Decor</option>
+                <option>Kitchenware</option>
+            </select>
+            <select>
+                <option>Sports,Books & More</option>
+                <option>Sports</option>
+                <option>Books</option>
+                <option>Music</option>
+            </select> 
+            <select>
+                <option>Offer Zone</option>
+                <option>Deals of the Day</option>
+                <option>Top Offers</option>
+                <option>Special Price</option>
+            </select>
+        </nav>
+    </header>
+    <div class="detail">
+        <h2>Best of Electronics</h2>
+        <div class="products">
+            <div class="card">
+                <img src="{% static 'images/SennheiserMomentum.webp' %}" class="card-img-top" alt="Best Truewireless Headphones">
+                <div class="card-body">
+                    <h5 class="card-title">Best Truewireless Headphones</h5>
+                    <a href="Home">Grab now</a>
+                    <p class="card-text">boAt, Oneplus & more</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="{% static 'images/shaver.webp' %}" class="card-img-top" alt="Best of Shavers">
+                <div class="card-body">
+                    <h5 class="card-title">Best of Shavers</h5>
+                    <a href="Home">Grab now</a>
+                    <p class="card-text">Philips & Havells</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="{% static 'images/smartwatch.webp' %}" class="card-img-top" alt="Noise Smartwatches">
+                <div class="card-body">
+                    <h5 class="card-title">Noise Smartwatches</h5>
+                    <a href="Home">Grab now</a>
+                    <p class="card-text">Sale Price Live!</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="{% static 'images/smart-watch2.webp' %}" class="card-img-top" alt="boAt Smartwatches">
+                <div class="card-body">
+                    <h5 class="card-title">boAt Smartwatches</h5>
+                    <a href="Home">Grab now</a>
+                    <p class="card-text">Sale Price Live!</p>
+                </div>
+            </div>
+              <div class="card">
+                 <img src="{% static 'images/camera.webp' %}" class="card-img-top" alt="Canon 350d">
+            <div class="card-body">
+                <h6 class="card-title">Canon 350d</h6>
+                <a href="Home">Grab now</a>
+                <p class="card-text">Sony, Nikon & more</p>
+            </div>
+        </div>
+           <div class="card">
+            <img src="{% static 'images/bluetooth.webp' %}" class="card-img-top" alt="Bluetooth Speakers">
+            <div class="card-body">
+                <h6 class="card-title">Bluetooth Speakers</h6>
+                <a href="Home">Grab now</a>
+                <p class="card-text">JBL, boAt & more</p>
+            </div>
+        </div>
+            <div class="card">
+               <img src="{% static 'images/tv_set.webp' %}" class="card-img-top" alt="Best of tv available">
+               <div class="card-body">
+                  <h6 class="card-title">Best of tvs</h6>
+                  <a href="Home">Grab now</a>
+                  <p class="card-text">HP, Dell & more</p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="{% static 'images/fasttrack.webp' %}" class="card-img-top" alt="Top smartwatch offer">
+            <div class="card-body">
+                <h6 class="card-title">Top smartwatch</h6>
+                <a href="Home">Grab now</a>
+                <p class="card-text">Sony, Apple & more</p>
+            </div>
+        </div>
+      </div>
+    </div>
+</body>
+</html>

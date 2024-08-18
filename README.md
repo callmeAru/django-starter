@@ -19,9 +19,9 @@ flipkart/
 │
 └── cartoon/              
     ├── __init__.py
-    ├── admin.py          # Admin site configuration
+    ├── admin.py         
     ├── apps.py          
-    ├── backends.py       # Custom authentication backends (if any)
+    ├── backends.py      
     ├── models.py        
     ├── views.py          
     ├── tests.py          
@@ -79,7 +79,7 @@ A quick guide for setting up a Django project with Python and VS Code.
   django-admin startproject myproject
   ```
 
-  *(Replace `myproject` with your desired project name)*
+  *(Replace `myproject` with your desired project name,for me it's flipkart)*
 
 - Navigate into your project directory:
 
@@ -105,7 +105,7 @@ A quick guide for setting up a Django project with Python and VS Code.
   python manage.py startapp myapp
   ```
 
-  *(Replace `myapp` with your desired app name)*
+  *(Replace `myapp` with your desired app name,for me it's cartoon)*
 
 - Add your app to `INSTALLED_APPS` in `settings.py`.
    ```bash

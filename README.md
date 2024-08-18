@@ -6,7 +6,7 @@ A simple Django project with home , user registration and login. Ideal for devel
 Below is the structure of the project, organized into key folders and files:
 
 flipkart/
-
+│
 ├── .gitignore           
 ├── manage.py             
 ├── flipkart/            
@@ -31,6 +31,8 @@ flipkart/
         ├── home.html
         ├── login.html
         └── register.html
+
+*(use raw if its not structure is not understandable)*
 
 # Getting Started with Django
 ## Django Project Setup Guide

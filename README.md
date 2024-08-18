@@ -5,34 +5,36 @@ A simple Django project with home , user registration and login. Ideal for devel
 # Project Structure:
 Below is the structure of the project, organized into key folders and files:
 
-flipkart/
-│
-├── .gitignore           
-├── manage.py             
-├── flipkart/            
-│   ├── __init__.py
-│   ├── asgi.py
-│   ├── settings.py       
-│   ├── urls.py           
-│   ├── wsgi.py           
-│
-└── cartoon/              
-    ├── __init__.py
-    ├── admin.py         
-    ├── apps.py          
-    ├── backends.py      
-    ├── models.py        
-    ├── views.py          
-    ├── tests.py          
-    ├── migrations/        
+    
+    flipkart/
     │
-    └── templates/        
-        ├── base.html
-        ├── home.html
-        ├── login.html
-        └── register.html
+    ├── .gitignore           
+    ├── manage.py             
+    ├── flipkart/            
+    │   ├── __init__.py
+    │   ├── asgi.py
+    │   ├── settings.py       
+    │   ├── urls.py           
+    │   ├── wsgi.py           
+    │
+    └── cartoon/              
+        ├── __init__.py
+        ├── admin.py         
+        ├── apps.py          
+        ├── backends.py      
+        ├── models.py        
+        ├── views.py          
+        ├── tests.py          
+        ├── migrations/        
+        │
+        └── templates/        
+            ├── base.html
+            ├── home.html
+            ├── login.html
+            └── register.html
 
-*(use raw if its not structure is not understandable)*
+
+
 
 # Getting Started with Django
 ## Django Project Setup Guide
